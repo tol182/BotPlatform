@@ -42,7 +42,8 @@ public class BotController {
     }
 
     public void registerHandler(String command, CommandHandler handler) {
-        handlers.put(command, handler);
+        var c = command.startsWith("/") ? command : "/" + command;
+        handlers.put(c, handler);
     }
 
     public void handleEvent(String event) {

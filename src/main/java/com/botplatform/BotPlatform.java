@@ -4,6 +4,7 @@ import com.botplatform.command.BaseHelpCommandHandler;
 import com.botplatform.command.BaseSettingsCommandHandler;
 import com.botplatform.command.BaseStartCommandHandler;
 import com.botplatform.command.BotCommand;
+import com.botplatform.command.CommandHandler;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -52,6 +53,10 @@ public class BotPlatform {
 
     public void handleEvent(String event) {
         controller.handleEvent(event);
+    }
+
+    public void registerHandler(String command, CommandHandler handler) {
+        controller.registerHandler(command, handler);
     }
 
 
