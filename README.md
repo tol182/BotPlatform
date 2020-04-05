@@ -31,17 +31,17 @@ Once added, you need to create instance of `BotPlatform` class:
 
 ```java
     BotPlatform botPlatform = new BotPlatform("BOT_TOKEN_ENV",
-        "BOT_CALLBACK_URL",
-        "BOT_FRIENDLY_NAME");
+        "BOT_FRIENDLY_NAME",
+        "BOT_CALLBACK_URL");
 
     botPlatform.initialize();
     botPlatform.subscribe();
 ```
 
 Where:
-* `BOT_TOKEN_ENV` - is the name of the environment variable that holds access token of your Telegram bot  
-* `BOT_CALLBACK_URL` - URL of your backend service for Telegram Webhook
+* `BOT_TOKEN_ENV` - is the name of the environment variable that holds access token of your Telegram bot
 * `BOT_FRIENDLY_NAME` - is display name of your bot
+* `BOT_CALLBACK_URL` - URL of your backend service for Telegram Webhook
 
 After this, your bot is ready to listen incoming commands on `BOT_CALLBACK_URL` and respond to them.  
 Currently, you have to provide external service to listen for a POST request on `BOT_CALLBACK_URL`, for example Spring Boot application.  
